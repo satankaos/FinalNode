@@ -1,0 +1,45 @@
+<%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+  <div class="container">
+    <h1>Medallas</h1>
+   <a class="btn btn-success btn-block my-4" href="/medallas/crearMedallas">Crear una nueva medalla</a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col"> Gimnasio</th>
+                    <th scope="col">lista objetos</th>
+
+                </tr>
+            </thead>
+            <tbody>
+      <% if (arrayMedallas.length> 0) { %>
+          <!--Haremos el foreach para recorrer el array  nombre: String,
+    ciudad: String,
+    gimnasio:String
+})-->
+          <% arrayMedallas.forEach(medallas => { %>
+              <tr>
+                  <th scope="row"><%= medallas.id %></th>
+                  <td><%= medallas.nombre %></td>
+                  <td><%= medallas.ciudad %></td>
+                  <td><%= medallas.gimnasio%></td>
+                  <td>
+                    <a class="btn btn-warning btn-sm" href="/medallas/<%= medallas.id %>">Editar/Eliminar</a>
+                    </td>
+                  <td>
+                
+                    </td>
+              </tr>
+          <% }) %>
+      <% } %>
+</tbody>
+        </table>
+    </div>
+
+
+<%- include("template/footer.ejs") %>
+

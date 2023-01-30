@@ -1,0 +1,45 @@
+<%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+  <div class="container">
+    <h1>Entrenador</h1>
+   <a class="btn btn-success btn-block my-4" href="/entrenador/crearEntrenador">Crear un nuevo entrenador</a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Bio</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">lista Pokemon</th>
+                    <th scope="col">lista objetos</th>
+
+                </tr>
+            </thead>
+            <tbody>
+      <% if (arrayEntrenador.length> 0) { %>
+          <!--Haremos el foreach para recorrer el array-->
+          <% arrayEntrenador.forEach(entrenador => { %>
+              <tr>
+                  <th scope="row"><%= entrenador.id %></th>
+                  <td><%= entrenador.nombre %></td>
+                  <td><%= entrenador.Bio %></td>
+                  <td><%= entrenador.Ciudad %></td>
+                  <td><%= entrenador.Lista_Pokemon %></td> 
+                  <td><%= entrenador.Lista_objetos %></td> 
+                  <td>
+                    <a class="btn btn-warning btn-sm" href="/entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
+                    </td>
+                  <td>
+                
+                    </td>
+              </tr>
+          <% }) %>
+      <% } %>
+</tbody>
+        </table>
+    </div>
+
+
+<%- include("template/footer.ejs") %>
+

@@ -1,0 +1,15 @@
+<%- include("template/cabecera", {tituloWeb: 'Nuevo Pokemon' }) %>
+    <div class="container">
+        <h1>Crear Nuevo entrenador</h1>
+        <form action="/entrenador" class="my-2" method="POST">
+            <input type="text" placeholder="Nombre del entrenador" class="form-control my-2" name="nombre">
+            <input type="text" placeholder="Biografia entrenador" class="form-control my-2" name="Bio">
+            <input type="text" placeholder="Ciudad" class="form-control my-2" name="Ciudad">
+            <input type="text" placeholder="Lista Pokemon" class="form-control my-2" name="Lista_Pokemon">
+            <input type="text" placeholder="Lista Objetos" class="form-control my-2" name="Lista_objetos">
+            <button type="submit" class="btn btn-dark btn-block">
+                Agregar
+            </button>
+        </form>
+    </div>
+<%- include("template/footer") %>
