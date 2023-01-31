@@ -14,13 +14,19 @@ app.set('views',__dirname+'/views')
 //Conexión a base de datos
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true)
-/*const user = 'cursonode';
-const password = 'wDT3pcDGPPmRzAoo';
-const dbname = 'dbpokemon';
-se ha de crear un archivo env para cojer los datos 
+const user = 'admin';
+const password = 'lBCYcteKVyrbolEN';
+const dbname = 'dbtienda';
+/*se ha de crear un archivo env para cojer los datos 
+process.env.BD_USER
+process.env.BD_PASSWORD
+process.env.BD_NAME
 */
 
-const uri = `mongodb+srv://${process.env.BD_USER}:${process.env.BD_PASSWORD}@cluster0.fpooui4.mongodb.net/${process.env.BD_NAME}?retryWrites=true&w=majority`; //URL de conexión, que completaremos luego
+
+const uri = `mongodb+srv://${user}:${password}@cluster0.fpooui4.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+
+; //URL de conexión, que completaremos luego
 mongoose.connect(uri,
   { useNewUrlParser: true, useUnifiedTopology: true }
 )
@@ -34,9 +40,8 @@ app.use(express.static(__dirname+'/public'));
 
    // llamadas a las rutas 
    app.use('/',require('./router/rutas'))
-   app.use('/pokemon',require('./router/pokemon'))
-   app.use('/entrenador',require('./router/entrenador'))
-   app.use('/medallas',require('./router/medallas'))
+   app.use('/usuario',require('./router/usuario'))
+   app.use('/producto',require('./router/producto'))
 //entrenador en ruta
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

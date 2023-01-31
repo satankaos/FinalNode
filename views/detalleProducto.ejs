@@ -1,0 +1,83 @@
+<%- include("template/cabecera", {tituloWeb: 'Detalles del producto' }) %>
+    <div class="container">
+        <h1>Detalles del producto</h1>
+        <% if (error) { %>
+            <%= mensaje %>
+                <a href="/producto" class="btn btn-dark btn-block my-2">
+                    Volver
+                </a>
+            
+                <% } %>
+                    <% if (!error) { %>
+                        <form id="editar" data-id="<%= producto.id %>">
+                            <input type="text" value="<%= producto.Nombre %>" class="form-control my-2" name="Nombre"
+                                id="nombreInput">
+                            <input type="text" value="<%= producto.Descripcion %>" class="form-control my-2" name="Descripcion"
+                                id="tipoInput">
+                            <input type="password" value="<%= producto.Precio  %>" class="form-control my-2"
+                                name="Precio" id="descripcionInput">
+
+                            <input type="text" value="<%= producto.Categoria %>" class="form-control my-2"
+                                name="Categoria" id="descripcionInput">
+
+
+
+                            <button class="btn btn-warning btn-sm" type="submit">
+                                Editar
+                            </button>
+                            <button class="btn btn-danger btn-sm" data-id="<%= producto.id %>">
+                                Eliminar
+                            </button>
+                        </form>
+                        <hr>
+
+                        <% } %>
+
+    </div>
+    <%- include("template/footer") %>
+        <script>
+            const btnEliminar = document.querySelector('.btn-danger')
+            btnEliminar.addEventListener('click', async () => {
+                console.log(btnEliminar.dataset.id)
+                try {
+                    // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
+                    const data = await fetch(`/producto/${btnEliminar.dataset.id}`, {
+                        method: 'delete'
+                    })
+                    const res = await data.json()
+                    console.log(res)
+                    if (res.estado) {
+                        window.location.href = '/producto'
+                    } else {
+                        console.log(res)
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            })
+
+            const formEditar = document.querySelector('#editar');
+            formEditar.addEventListener('submit', async (e) => {
+                e.preventDefault()
+                console.log("enviado");
+                const Nombre = formEditar.elements['Nombre'].value
+                const Descripcion = formEditar.elements['Descripcion'].value
+                const precio = formEditar.elements['Precio'].value
+                const Categoria = formEditar.elements['Categoria'].value
+                const id = formEditar.dataset.id
+                const data = await fetch(`/producto/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ Nombre, Descripcion, precio,Categoria})
+                })
+                const res = await data.json()
+                if (res.estado) {
+                    window.location.href = '/producto'
+                } else {
+                    console.log(res)
+                }
+            })
+
+        </script>

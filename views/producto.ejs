@@ -1,0 +1,45 @@
+<%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+  <div class="container">
+    <h1>Usuario</h1>
+   <a class="btn btn-success btn-block my-4" href="/usuario/crearUsuario">Crear un nuevo usuario</a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">contrsaseña</th>
+                    <th scope="col">Direccion de envio</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+      <% if (arrayUsuario.length> 0) { %>
+          <!--Haremos el foreach para recorrer el array-->
+          <% arrayUsuario.forEach(usuario => { %>
+              <tr>
+                  <th scope="row"><%= usuario.id %></th>
+                  <td><%= usuario.nombre %></td>
+                  <td><%= usuario.usuario %></td>
+                  <td><%= usuario.contraseña %></td>
+                  <td><%= usuario.Direccion_de_envio %></td> 
+                  
+                  <td>
+                    <a class="btn btn-warning btn-sm" href="/usuario/<%= usuario.id %>">Editar/Eliminar</a>
+                    </td>
+                  <td>
+                
+                    </td>
+              </tr>
+          <% }) %>
+      <% } %>
+</tbody>
+        </table>
+    </div>
+
+
+<%- include("template/footer.ejs") %>
+

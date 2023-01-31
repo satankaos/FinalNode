@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const productoSchema = new Schema({
     Nombre:String,
-    Descripción:String,
+    Descripcion:String,
     Precio:String,
-    Categoría:String,
-    Stock:Boolean,
+    Categoria:String,
+
     
 })
 
