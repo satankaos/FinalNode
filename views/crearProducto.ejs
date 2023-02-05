@@ -1,16 +1,13 @@
 <%- include("template/cabecera", {tituloWeb: 'Nuevo producto' }) %>
     <div class="container">
-        Nombre:String,
-        Descripcion:String,
-        Precio:String,
-        Categoria:String,
+        
         
         <h1>Crear Nuevo producto</h1>
         <form action="/producto" class="my-2" method="POST">
-            <input type="text" placeholder="Nombre " class="form-control my-2" name="Nombre">
+            <input type="text" placeholder="Nombre" class="form-control my-2" name="Nombre">
             <input type="text" placeholder="Descripcion" class="form-control my-2" name="Descripcion">
-            <input type="text" placeholder="Contraseña" class="form-control my-2" name="contraseña">
-            <input type="text" placeholder="Precio" class="form-control my-2" name="Precio">
+            <input type="number" placeholder="Precio" class="form-control my-2" name="Precio">
+            <input type="text" placeholder="Categoria" class="form-control my-2" name="Categoria">
             <button type="submit" class="btn btn-dark btn-block">
                 Agregar
             </button>
