@@ -14,17 +14,8 @@ app.set('views',__dirname+'/views')
 //Conexión a base de datos
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true)
-const user = 'admin';
-const password = 'lBCYcteKVyrbolEN';
-const dbname = 'dbtienda';
-/*se ha de crear un archivo env para cojer los datos 
-process.env.BD_USER
-process.env.BD_PASSWORD
-process.env.BD_NAME
-*/
 
-
-const uri = `mongodb+srv://${user}:${password}@cluster0.fpooui4.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.BD_USER}:${process.env.BD_PASSWORD}@cluster0.fpooui4.mongodb.net/${process.env.BD_NAME}?retryWrites=true&w=majority`;
 
 ; //URL de conexión, que completaremos luego
 mongoose.connect(uri,
