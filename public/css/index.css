@@ -1,0 +1,12 @@
+div {
+    display: flex;
+    justify-content: center;
+  }
+  
+  h1,p {
+    text-align: center;
+  }
+  .btn{margin-left: 5%;
+      margin-right: 5%;}
+img{width: 50%;
+height: 25%; ;}

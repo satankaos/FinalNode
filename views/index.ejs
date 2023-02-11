@@ -1,9 +1,23 @@
 
 <%- include("template/cabecera.ejs", {tituloWeb:'Inicio'}) %>
-<h1><%= titulo %></h1>
-<div class="container-fluid !direction !spacing">
-<a class="btn btn-warning btn-sm" href="/usuario">usuarios</a>
-<a class="btn btn-warning btn-sm" href="/producto">productos</a>
-</div>
+<link rel="stylesheet" href="/css/index.css">
 
+
+
+<h1><%= titulo %></h1>
+<p>Estas en el panel de control de administrador de esta pagina desde aqui podras ver los usuarios y los productos ademas de poder eliminarlos ,editarlos o crearlos </p>
+<div class="container-fluid !direction !spacing">
+    <a class="btn btn-warning " href="/usuario">usuarios</a>
+    <a class="btn btn-warning " href="/producto">productos</a>
+
+</div>
+<p>Aqui simulo con imagenes lo que seria el monitoreo de las especificaciones del servidor que aloja la pagina </p>
+<div>
+    
+    <img src="/img/chrome_3EPLsEoUyG.png" class="img-fluid rounded-top" alt="cpu">
+    <img src="/img/chrome_bZGPA5HNML.png" class="img-fluid rounded-top" alt="ram">
+    <img src="/img/chrome_qrgI5JOt2l.png" class="img-fluid rounded-top" alt="disco">
+   
+</div>
+<img src="/img/chrome_beeXnxQ7kl.png" class="" alt="visitas">
 <%- include("template/footer.ejs")%>
