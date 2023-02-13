@@ -1,4 +1,4 @@
 # FinalNode
-se trata de un proyecto en el cual puedes administrar usuarios y productos dentro de una base de datos como borrarlos editarlos y crearlos 
+el proyecto trata de un panel de control  para administrar usuarios ,productos,empleados y ordenes  para poder crear ,editar ,eliminar y visualizar   de una manera facil y sensilla para el usuario que lo va a utilizar
 # sugiero que entre al index primero donde tendra los botones para aceder a los diferentes apartados de los ejercicios
-he arregalo los botones de vilver al index y he mejorado un poco la apariencia del mismo
+
