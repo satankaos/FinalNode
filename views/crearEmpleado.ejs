@@ -1,0 +1,21 @@
+<%- include("template/cabecera", {tituloWeb: 'Nueva Orden' }) %>
+    <div class="container">
+        <!--  IdUsuario:String,
+    nombresProductos:String,
+    Precio_Total:String, -->
+        
+        <h1>Crear Nuevo empleado</h1>
+        <form action="/empleado" class="my-2" method="POST">
+            <input type="text" placeholder="Nombre Empleado" class="form-control my-2" name="Nombre_empleado">
+            <input type="number" placeholder=" Telefono" class="form-control my-2" name="Telefono">
+            <input type="text" placeholder="CorreoCorporativo" class="form-control my-2" name="CorreoCorporativo">
+            <input type="text" placeholder="Residencia" class="form-control my-2" name="Residencia">
+            <button type="submit" class="btn btn-dark btn-block">
+                Agregar
+            </button>
+        </form>
+        <button class="btn btn-secondary btn-block" href="/empleado">
+            volver
+        </button>
+    </div>
+<%- include("template/footer") %>

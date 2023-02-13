@@ -33,7 +33,8 @@ app.use(express.static(__dirname+'/public'));
    app.use('/',require('./router/rutas'))
    app.use('/usuario',require('./router/usuario'))
    app.use('/producto',require('./router/producto'))
-   app.use('/producto',require('./router/orden'))
+   app.use('/orden',require('./router/orden'))
+   app.use('/empleado',require('./router/empleado'))
   
 
 //entrenador en ruta

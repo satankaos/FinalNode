@@ -1,0 +1,20 @@
+<%- include("template/cabecera", {tituloWeb: 'Nueva Orden' }) %>
+    <div class="container">
+        <!--  IdUsuario:String,
+    nombresProductos:String,
+    Precio_Total:String, -->
+        
+        <h1>Crear Nuevo orden</h1>
+        <form action="/orden" class="my-2" method="POST">
+            <input type="text" placeholder="id usuario" class="form-control my-2" name="IdUsuario">
+            <input type="text" placeholder="Nombres Productos" class="form-control my-2" name="nombresProductos">
+            <input type="number" placeholder="Precio Total" class="form-control my-2" name="Precio_Total">
+            <button type="submit" class="btn btn-dark btn-block">
+                Agregar
+            </button>
+        </form>
+        <button class="btn btn-secondary btn-block" href="/orden">
+            volver
+        </button>
+    </div>
+<%- include("template/footer") %>

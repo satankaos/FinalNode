@@ -1,0 +1,50 @@
+<%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+  <div class="container">
+    <h1>Orden</h1>
+   <a class="btn btn-success btn-block my-4" href="/orden/crearorden">Crear un nuevo orden</a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Id usuario</th>
+                    <th scope="col">Nombre Productos</th>
+                    <th scope="col">Precio Total</th>
+            
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+      <% if (arrayOrden.length> 0) { %>
+          <!--Haremos el foreach para recorrer el array-->
+          <% arrayOrden.forEach(orden => { %>
+              <tr>
+                  <th scope="row"><%= orden.id %></th>
+                  <td><%= orden.IdUsuario %></td>
+                  <td><%= orden.nombresProductos %></td>
+                  <td><%= orden.Precio_Total %></td>
+                  
+                  
+                  <td>
+                    <a class="btn btn-warning btn-sm" href="/orden/<%= orden.id %>">Editar/Eliminar</a>
+                    </td>
+                  <td>
+                
+                    </td>
+              </tr>
+             
+          <% }) %>
+      <% } %>
+      
+</tbody>
+        </table>
+        <div>
+            <a class="btn btn-secondary btn-sm btn-block" href="/">Volver</a>
+        </div>
+    </div>
+
+
+<%- include("template/footer.ejs") %>
+

@@ -1,23 +1,41 @@
-
 <%- include("template/cabecera.ejs", {tituloWeb:'Inicio'}) %>
-<link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
+    <h1>
+        <%= titulo %>
+    </h1>
 
-<h1><%= titulo %></h1>
-<p>Estas en el panel de control de administrador de esta pagina desde aqui podras ver los usuarios y los productos ademas de poder eliminarlos ,editarlos o crearlos </p>
-<div class="container-fluid !direction !spacing">
-    <a class="btn btn-warning " href="/usuario">usuarios</a>
-    <a class="btn btn-warning " href="/producto">productos</a>
+    <div class="row">
+        <div class="col-5">
+            <div class="row">
+                <p class="col-11 shadow p-3 mb-2 bg-white">Con el boton de Usuarios puedes administrar todo lo referente a los usuarios que se
+                    registren en la pagina</p>
+                <p class="col-11 shadow p-3 mb-2 bg-white">Con el boton de Productos puedes administrar todo lo referente a los productos que se
+                    registrados en venta en la pagina</p>
+                <p class="col-11 shadow p-3 mb-2 bg-white">Con el boton de Orden puedes administrar todo lo referente a los ordenes de los pedidos
+                    que se registren en la compra de los productos en la pagina</p>
+                <p class="col-11 shadow p-3 mb-2 bg-white">Con el boton de Empleados puedes administrar todo lo referente a los Empleados que
+                    trabajan en la empresa</p>
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="row">
+                <a class="btn btn-secondary col-11" href="/usuario">usuarios</a>
+                <a class="btn btn-secondary col-11" href="/producto">productos</a>
+                <a class="btn btn-secondary col-11" href="/orden">ordenes</a>
+                <a class="btn btn-secondary col-11" href="/empleado">Empleado</a>
+                
+            </div>
+           
+            
+        </div>
+        
+        <img src="img/chrome_3EPLsEoUyG.png" class="img col-3.5" alt="cpu load" srcset="">
+       
+        <img src="img/chrome_bZGPA5HNML.png" class="img col-3.5" alt="ram memory" sizes="" srcset="">
+        <img src="img/chrome_qrgI5JOt2l.png" class="img col-3.5" alt="gpu" sizes="" srcset="">
 
-</div>
-<p>Aqui simulo con imagenes lo que seria el monitoreo de las especificaciones del servidor que aloja la pagina </p>
-<div>
-    
-    <img src="/img/chrome_3EPLsEoUyG.png" class="img-fluid rounded-top" alt="cpu">
-    <img src="/img/chrome_bZGPA5HNML.png" class="img-fluid rounded-top" alt="ram">
-    <img src="/img/chrome_qrgI5JOt2l.png" class="img-fluid rounded-top" alt="disco">
-   
-</div>
-<img src="/img/chrome_beeXnxQ7kl.png" class="" alt="visitas">
-<%- include("template/footer.ejs")%>
+        
+        <%- include("template/footer.ejs")%>
