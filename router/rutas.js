@@ -9,6 +9,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.render("index", { titulo: "Panel de control" })
 })
+router.get('/index', (req, res) => {
+    res.render("index", { titulo: "Panel de control" })
+})
 
 router.get('/contacto', (req, res) => {
     res.render("contacto", { tituloContacto: "Estamos en contacto de manera dinámica!!" })
