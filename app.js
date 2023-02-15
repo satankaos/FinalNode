@@ -41,3 +41,10 @@ app.use(express.static(__dirname+'/public'));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+app.use((req,res)=>{
+res.status(404).render("404",{
+  titulo: "Pagina no encontrada",
+  descripcion:" Pagina inexistente"
+})
+
+});
